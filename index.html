@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교</title>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
+    
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+
+    <!-- Custom files -->
+     <link rel="stylesheet" href="css/main.css" /> 
+
+    <!-- your script file -->
+    <script src="./script2.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div id="filters">
+            <select id="option1" name="cars">
+                <option value="" disabled selected>시도</option>
+            </select>
+            <select id="option2" name="cars">
+                <option value="" disabled selected>행정구</option>
+            </select>
+            <button id="submit">submit</button>
+
+        </div>
+        <div id="map">
+        </div>
+    </div>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKXJ36LSOqE5dm8OYof_2eFGrBMbBP8X0&callback=initMap">
+    </script>
+
+</body>
+</html>
