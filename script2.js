@@ -6,7 +6,7 @@ function initMap() {
     var map
 
 
-    d3.tsv('./data/schools2.tsv', function(error, allData){
+    d3.tsv('./data/schools.tsv', function(error, allData){
         console.log(allData)
         cities = {}
         cityName = []
@@ -18,6 +18,7 @@ function initMap() {
             if(cities[d['시도']].indexOf(d['행정구']) == -1){
                 cities[d['시도']].push(d['행정구'])
             }
+            $('#browsers').append(`<option value="${d['학교명']}">${d['시도']} ${d['행정구']}</option>`)
         })
         cityName.sort().map((city)=>{
             $('#option1').append(`<option value="${city}">${city}</option>`)
@@ -50,10 +51,16 @@ function initMap() {
 
 
         var drawMap = (data) => {
-            var avgLat = d3.mean(data, ()=>+data[0]["위도"])
-            var avgLng = d3.mean(data, ()=>+data[0]["경도"])
+            var minLat = d3.min(data, ()=>+data[0]["위도"])
+            var maxLat = d3.max(data, ()=>+data[0]["위도"])
+            var minLng = d3.min(data, ()=>+data[0]["경도"])
+            var maxLng = d3.max(data, ()=>+data[0]["경도"])
+            console.log(minLat, maxLat, minLng, maxLng)
+            var avgLat = (maxLat + minLat) / 2;
+            var avgLng = (maxLng + minLng) / 2;
+            console.log(avgLat, avgLng)
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
+                zoom: 12,
                 center: {
                     lat: avgLat,
                     lng: avgLng
@@ -75,7 +82,7 @@ function initMap() {
                 })
 
                 var infowindow = new google.maps.InfoWindow({
-                    content: `<h2>${d['학교명']}</h2>`
+                    content: `<h2>${d['학교명']}</h2><p>${d['위도']} ${d['경도']}</p>`
                 });
 
                 marker.addListener('click', function() {
@@ -126,12 +133,17 @@ function initMap() {
         }
     })
 
+    $('#searchByAddress').click(function(){
+        console.log("?")
+        $('.outer').css("background-color", "green")
+    })
 
- 
 
-
-
-
+    $('#searchByName').click(function(){
+        $('.outer').css("background-color", "yellowgreen")
+    })
 
 
 }
+
+

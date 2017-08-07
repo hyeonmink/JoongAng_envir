@@ -10,4 +10,35 @@
     height: 100vh;
 }
 
+.outer{
+    width: 50vw;
+    height: 400px;
+    background-color: red;
+    margin-right: auto;
+    margin-left:auto;
+    margin-top: 35vh;
+}
 
+.left{
+    height: 100%;
+    width: 15vw;
+}
+
+#searchByAddress, #searchByName{
+    height: 50%;
+    width: 15vw;
+    text-align: center;
+    display: table;
+    border: none;
+
+}
+
+#searchByAddress{
+    background-color: green;
+}
+
+#searchByName{
+    background-color: yellowgreen;
+}
+
+button:focus {outline:0;}

@@ -21,10 +21,25 @@
      <link rel="stylesheet" href="css/main.css" /> 
 
     <!-- your script file -->
-    <script src="./script2.js"></script>
+     <script src="./script2.js"></script> 
 
 </head>
 <body>
+    <div class="container">
+        <div class="outer">
+            <div class="left">
+                <button id="searchByAddress">
+                    지역으로<br>검색
+                </button>
+                <button id="searchByName">
+                    학교명으로<br>검색
+                </button>
+            </div>
+            <div id="right">
+
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div id="filters">
             <select id="option1" name="cars">
@@ -33,9 +48,13 @@
             <select id="option2" name="cars">
                 <option value="" disabled selected>행정구</option>
             </select>
-            <button id="submit">submit</button>
+            <button id="submit">submit2</button>
 
         </div>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+            </datalist>
+
         <div id="map">
         </div>
     </div>
