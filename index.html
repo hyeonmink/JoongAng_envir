@@ -26,6 +26,8 @@
 </head>
 <body>
     <div class="container">
+        <input type="radio" name="filterType" value="address"> address<br>
+        <input type="radio" name="filterType" value="name"> name<br>
         <div id="filters">
             <select id="option1" name="cars">
                 <option value="" disabled selected>시도</option>
@@ -34,8 +36,15 @@
                 <option value="" disabled selected>행정구</option>
             </select>
             <button id="submit">submit</button>
-
         </div>
+        
+            <input id='browserInput' list="browsers" name="browser">
+            <datalist id="browsers">
+                
+            </datalist>
+
+
+
         <div id="map">
         </div>
     </div>
